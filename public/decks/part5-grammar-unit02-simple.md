@@ -1,0 +1,35 @@
+# PART5 문법 UNIT02 수 일치 - 불가산명사/수량표현
+tags: TOEIC, Part5, Grammar, 수일치, 불가산명사
+
+---
+
+furniture | 가구 (불가산, 단수취급)
+equipment | 기구, 장비 (불가산, 단수취급)
+money | 돈 (불가산, 단수취급)
+cash | 현금 (불가산, 단수취급)
+change | 잔돈 (불가산, 단수취급)
+baggage | 수하물 (불가산, 단수취급)
+luggage | 수하물 (불가산, 단수취급)
+access | 접근 (불가산, 단수취급)
+advice | 조언 (불가산, 단수취급)
+information | 정보 (불가산, 단수취급)
+economics | 경제학 (학문명, 단수취급)
+statistics | 통계학 (학문명, 단수취급)
+mathematics | 수학 (학문명, 단수취급)
+one | 하나 (단수취급)
+each | 각각의 (단수취급)
+every | 모든 (단수취급)
+everything | 모든 것 (단수취급)
+everybody | 모든 사람 (단수취급)
+everyone | 모든 사람 (단수취급)
+most of | 대부분의 (뒤 명사에 일치)
+all of | 모든 (뒤 명사에 일치)
+some of | 일부의 (뒤 명사에 일치)
+half of | 절반의 (뒤 명사에 일치)
+percent of | ~퍼센트의 (뒤 명사에 일치)
+the rest of | 나머지의 (뒤 명사에 일치)
+both of | 둘 다의 (복수동사)
+a couple of | 두세 개의 (복수동사)
+a number of | 많은 (복수동사)
+the number of | ~의 숫자 (단수동사)
+
