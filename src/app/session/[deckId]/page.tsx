@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { useParams, useSearchParams, useRouter } from 'next/navigation';
 import { X, Pause, Play } from 'lucide-react';
 import { useSessionStore, type SessionMode } from '@/stores/sessionStore';
@@ -43,22 +43,39 @@ export default function SessionPage() {
   const [isFlipped, setIsFlipped] = useState(false);
   const [showResult, setShowResult] = useState(false);
 
+  // Track if session was already started to prevent re-initialization
+  const sessionStartedRef = useRef(false);
+
   const deck = getDeck(deckId);
 
-  // Start session on mount
+  // Start session on mount - only once
   useEffect(() => {
-    if (!isActive && deckId) {
+    // Skip if session already started or currently active
+    if (sessionStartedRef.current || isActive) {
+      return;
+    }
+
+    if (deckId) {
+      sessionStartedRef.current = true;
+
+      // Capture settings at session start time to avoid dependency issues
+      const initialSettings = {
+        maxNew: settings.maxNewCardsPerDay,
+        maxReview: settings.maxReviewsPerDay,
+      };
+
       startSession(deckId, {
         mode,
         minutes,
-        maxNew: settings.maxNewCardsPerDay,
-        maxReview: settings.maxReviewsPerDay,
+        ...initialSettings,
       }).catch((error) => {
+        sessionStartedRef.current = false; // Allow retry on error
         alert(error.message || 'Failed to start session');
         router.back();
       });
     }
-  }, [deckId, mode, minutes, isActive, startSession, settings, router]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [deckId]); // Only depend on deckId - session params are captured once
 
   // Timer tick
   useEffect(() => {
